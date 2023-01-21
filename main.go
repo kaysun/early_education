@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/circle/early_education/routers"
+	"github.com/circle/early_education/transport/routers"
 )
 
 func main() {
