@@ -1,5 +1,10 @@
 package user
 
+import (
+	"github.com/circle/early_education/infra"
+	"github.com/circle/early_education/model"
+)
+
 // UserService 用户服务
 type UserService struct {
 }
@@ -10,6 +15,12 @@ func (UserService) Register() error {
 }
 
 // Login 登录
-func (UserService) Login() error {
-	return nil
+func (u UserService) Login(user model.User) (bool, error) {
+	userDAO := infra.NewUserDAO()
+	userID, err := userDAO.GetUserID(user)
+	if err != nil {
+		return false, err
+	}
+
+	return userID > 0, nil
 }
