@@ -6,8 +6,8 @@ type Teacher struct {
 	Name string `json:"name"`
 	// Age 年龄
 	Age uint8 `json:"age"`
-	// Area 地域
-	Area string `json:"area"`
-	// CourseIDs 教授课程列表
+	// Description 描述
+	Description string `json:"description"`
+	// CourseIDs 教授课程ID列表
 	CourseIDs []uint32 `json:"-"`
 }

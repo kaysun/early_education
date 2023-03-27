@@ -35,9 +35,9 @@ func (u UserDAO) GetUserID(user model.User) (uint64, error) {
 	return newUser.UserID, err
 }
 
-func (u UserDAO) AddUser(user model.User) (uint64, error) {
+func (u UserDAO) AddUser(user model.User) (int, error) {
 	err := u.MysqlProxy.
 		Create(&user).
 		Error
-	return user.UserID, err
+	return int(user.UserID), err
 }

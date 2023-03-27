@@ -7,17 +7,23 @@ import (
 
 // UserService 用户服务
 type UserService struct {
+	userDao infra.UserDAO
+}
+
+func NewUserService(userDao infra.UserDAO) UserService {
+	return UserService{
+		userDao: userDao,
+	}
 }
 
 // Register 注册
-func (UserService) Register() error {
-	return nil
+func (u UserService) Register(user model.User) (int, error) {
+	return u.userDao.AddUser(user)
 }
 
 // Login 登录
 func (u UserService) Login(user model.User) (bool, error) {
-	userDAO := infra.NewUserDAO()
-	userID, err := userDAO.GetUserID(user)
+	userID, err := u.userDao.GetUserID(user)
 	if err != nil {
 		return false, err
 	}

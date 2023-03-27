@@ -13,7 +13,7 @@ type User struct {
 	// Nick 昵称
 	Nick string `gorm:"column:nick"`
 	// Birthday 出生日期，用于判定
-	Birthday string `gorm:"column:birthday"`
+	Birthday time.Time `gorm:"column:birthday"`
 	// Phone 手机号
 	Phone int `gorm:"column:phone"`
 	// CreateTime 创建时间

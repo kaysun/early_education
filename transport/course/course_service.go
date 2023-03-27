@@ -23,7 +23,6 @@ func List(context *gin.Context) {
 				Teacher: model.Teacher{
 					Name:      "jasmine",
 					Age:       25,
-					Area:      "北京",
 					CourseIDs: []uint32{1},
 				},
 				OpenState: 0,
@@ -36,7 +35,6 @@ func List(context *gin.Context) {
 				Teacher: model.Teacher{
 					Name:      "lucky",
 					Age:       23,
-					Area:      "北京",
 					CourseIDs: []uint32{2},
 				},
 				OpenState: 0,
