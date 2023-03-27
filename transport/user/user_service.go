@@ -42,7 +42,7 @@ func Resister(context *gin.Context) {
 
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
-		"msg":  "login success",
+		"msg":  "register success",
 		"data": userID,
 	})
 }
@@ -60,7 +60,7 @@ func Login(context *gin.Context) {
 
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{
-			"code": 10010,
+			"code": errors.LoginError,
 			"msg":  err.Error(),
 		})
 		return
@@ -75,7 +75,7 @@ func Login(context *gin.Context) {
 	}
 
 	context.JSON(http.StatusOK, gin.H{
-		"code": 20010,
+		"code": errors.LoginUserOrPasswordInvalid,
 		"msg":  "login failed",
 	})
 }
