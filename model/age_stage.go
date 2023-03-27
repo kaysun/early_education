@@ -20,4 +20,6 @@ const (
 	Year4To5 AgeStage = 7
 	// Year5To6 5-6岁
 	Year5To6 AgeStage = 8
+	// YearMoreThan6 超过6岁
+	YearMoreThan6 AgeStage = 9
 )
