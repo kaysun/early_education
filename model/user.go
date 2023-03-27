@@ -26,3 +26,8 @@ type User struct {
 func (w User) TableName() string {
 	return "user"
 }
+
+// AgeStage 获取用户的年龄阶段
+func (w User) AgeStage() AgeStage {
+	return 0
+}
