@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-var userService = user.NewUserService(infra.NewUserDAO())
+var userService = user.NewUserService(infra.UserDAO{})
 
 func Resister(context *gin.Context) {
 	var registerReq proto.RegisterReq
