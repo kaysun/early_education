@@ -22,7 +22,7 @@ func NewUserDAO() UserDAO {
 	}
 }
 
-func (u UserDAO) GetUserID(user model.User) (uint64, error) {
+func (u UserDAO) GetUserID(user model.User) (int, error) {
 	// 通过MysqlProxy 操作数据库
 	var newUser model.User
 	err := u.MysqlProxy.
@@ -32,7 +32,7 @@ func (u UserDAO) GetUserID(user model.User) (uint64, error) {
 		First(&newUser).
 		Error
 	// 如果能取出来，userid一定大于0，说明有这个用户
-	return newUser.UserID, err
+	return int(newUser.UserID), err
 }
 
 func (u UserDAO) AddUser(user model.User) (int, error) {

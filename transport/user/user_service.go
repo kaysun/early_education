@@ -43,7 +43,9 @@ func Resister(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "register success",
-		"data": userID,
+		"data": proto.RegisterResp{
+			UserID: userID,
+		},
 	})
 }
 
@@ -53,7 +55,7 @@ func Login(context *gin.Context) {
 		return
 	}
 
-	flag, err := userService.Login(model.User{
+	userID, err := userService.Login(model.User{
 		Name:     loginReq.UserName,
 		Password: loginReq.PassWord,
 	})
@@ -66,10 +68,13 @@ func Login(context *gin.Context) {
 		return
 	}
 
-	if flag {
+	if userID > 0 {
 		context.JSON(http.StatusOK, gin.H{
 			"code": 0,
 			"msg":  "login success",
+			"data": proto.LoginResp{
+				UserID: userID,
+			},
 		})
 		return
 	}

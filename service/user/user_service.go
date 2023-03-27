@@ -22,11 +22,11 @@ func (u UserService) Register(user model.User) (int, error) {
 }
 
 // Login 登录
-func (u UserService) Login(user model.User) (bool, error) {
+func (u UserService) Login(user model.User) (int, error) {
 	userID, err := u.userDao.GetUserID(user)
 	if err != nil {
-		return false, err
+		return 0, err
 	}
 
-	return userID > 0, nil
+	return userID, nil
 }

@@ -11,3 +11,8 @@ type RegisterReq struct {
 	// Birthday 出生日期，用于判定
 	Birthday string `json:"birthday"`
 }
+
+type RegisterResp struct {
+	// UserID 用户ID
+	UserID int `json:"user_id"`
+}
