@@ -18,7 +18,7 @@ func Routers() *gin.Engine {
 
 	courseRouter := r.Group("/course")
 	{
-		// 课程列表，默认返回7天的 /course/list?pageNo=1&size=10
+		// 课程列表，默认返回7天的 /course/all
 		courseRouter.GET("/all", course.All)
 	}
 
