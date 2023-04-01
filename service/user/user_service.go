@@ -10,12 +10,6 @@ type UserService struct {
 	userDao infra.UserDAO
 }
 
-func NewUserService(userDao infra.UserDAO) UserService {
-	return UserService{
-		userDao: userDao,
-	}
-}
-
 // Register 注册
 func (u UserService) Register(user model.User) (int, error) {
 	return u.userDao.AddUser(user)

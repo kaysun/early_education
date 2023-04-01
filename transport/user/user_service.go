@@ -4,7 +4,6 @@ import (
 	"crypto/md5"
 	"fmt"
 	"github.com/circle/early_education/errors"
-	"github.com/circle/early_education/infra"
 	"github.com/circle/early_education/model"
 	"github.com/circle/early_education/service/user"
 	"github.com/circle/early_education/transport/user/proto"
@@ -14,7 +13,7 @@ import (
 	"time"
 )
 
-var userService = user.NewUserService(infra.UserDAO{})
+var userService user.UserService
 
 func Resister(context *gin.Context) {
 	var registerReq proto.RegisterReq
