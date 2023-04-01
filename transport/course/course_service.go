@@ -39,3 +39,11 @@ func Booking(context *gin.Context) {
 		"data": proto.BookingCourseResp{BookingID: 0},
 	})
 }
+
+func CancelBooking(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.CancelBookingCourseResp{BookingID: 0},
+	})
+}
