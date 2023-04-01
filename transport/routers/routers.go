@@ -22,6 +22,8 @@ func Routers() *gin.Engine {
 		courseRouter.GET("/all", course.All)
 		// 获取可约课程列表 /course/reservable/list
 		courseRouter.GET("/reservable/list", course.ReservableList)
+		// 约课 /course/booking
+		courseRouter.POST("/booking", course.Booking)
 	}
 
 	return r

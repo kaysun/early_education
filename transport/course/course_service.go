@@ -1,7 +1,6 @@
 package course
 
 import (
-	"github.com/circle/early_education/model"
 	"github.com/circle/early_education/transport/course/proto"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -26,6 +25,17 @@ func ReservableList(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "success",
-		"data": []model.Course{},
+		"data": proto.ReservableListResp{
+			ReservableCourses: []proto.ReservableCourse{},
+		},
+	})
+}
+
+// Booking 约课
+func Booking(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.BookingCourseResp{BookingID: 0},
 	})
 }
