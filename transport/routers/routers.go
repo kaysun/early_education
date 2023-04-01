@@ -10,9 +10,9 @@ func Routers() *gin.Engine {
 	r := gin.Default()
 	userRouter := r.Group("/user")
 	{
-		// 注册 /user/register?
+		// 注册 /user/register
 		userRouter.POST("/register", user.Resister)
-		// 登录 /user/login?
+		// 登录 /user/login
 		userRouter.POST("/login", user.Login)
 	}
 
@@ -20,6 +20,8 @@ func Routers() *gin.Engine {
 	{
 		// 课程列表，默认返回7天的 /course/all
 		courseRouter.GET("/all", course.All)
+		// 获取可约课程列表 /course/reservable/list
+		courseRouter.GET("/reservable/list", course.ReservableList)
 	}
 
 	return r

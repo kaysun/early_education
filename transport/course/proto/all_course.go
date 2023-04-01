@@ -20,13 +20,13 @@ type Course struct {
 	// CourseName 课程名字
 	CourseName string `json:"course_name"`
 	// ClassTime 上课时间
-	ClassTime time.Time `gorm:"column:class_time"`
+	ClassTime time.Time `json:"class_time"`
 	// MaxStudents 课程最多容纳的学生数量
-	MaxStudents int `gorm:"column:max_students"`
+	MaxStudents int `json:"max_students"`
 	// ScheduledStudents 已经约课的学生数
-	ScheduledStudents int `gorm:"column:scheduled_students"`
+	ScheduledStudents int `json:"scheduled_students"`
 	// CourseStatus 课程状态：1-有空闲 2-约满
-	CourseStatus int `gorm:"column:course_status"`
+	CourseStatus int `json:"course_status"`
 
 	// TeacherID 教师ID
 	TeacherID int `json:"teacher_id"`
@@ -36,4 +36,11 @@ type Course struct {
 	TeacherAge uint8 `json:"teacher_age"`
 	// TeacherDesc 教师优势描述
 	TeacherDesc string `json:"teacher_desc"`
+}
+
+// ReservableCourse 可约的课程
+type ReservableCourse struct {
+	Course
+	// IsScheduled 是否已约
+	IsScheduled bool `json:"is_scheduled"`
 }
