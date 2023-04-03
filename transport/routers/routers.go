@@ -1,6 +1,7 @@
 package routers
 
 import (
+	"github.com/circle/early_education/transport/content"
 	"github.com/circle/early_education/transport/course"
 	"github.com/circle/early_education/transport/user"
 	"github.com/gin-gonic/gin"
@@ -31,7 +32,9 @@ func Routers() *gin.Engine {
 	contentRouter := r.Group("/content")
 	{
 		// 首页列表 /content/homepage
-		contentRouter.GET("/homepage")
+		contentRouter.GET("/homepage", content.Homepage)
+		// 分页获取模块下的所有内容 /content/mod/contents
+		contentRouter.GET("/mod/contents", content.ModContents)
 	}
 
 	return r
