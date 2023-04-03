@@ -5,7 +5,7 @@ import "time"
 // GetAllCoursesReq 获取全量课程请求（默认返回未来7天的课程）
 type GetAllCoursesReq struct {
 	// UserID 用户ID
-	UserID int `json:"user_id"`
+	UserID int `form:"user_id"`
 }
 
 // GetAllCoursesResp 获取全量课程回包

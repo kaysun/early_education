@@ -28,5 +28,11 @@ func Routers() *gin.Engine {
 		courseRouter.POST("/cancel/booking", course.CancelBooking)
 	}
 
+	contentRouter := r.Group("/content")
+	{
+		// 首页列表 /content/homepage
+		contentRouter.GET("/homepage")
+	}
+
 	return r
 }

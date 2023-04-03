@@ -2,9 +2,9 @@ package proto
 
 type BookingCourse struct {
 	// UserID 用户ID
-	UserID int `json:"user_id"`
+	UserID int `json:"user_id" form:"user_id"`
 	// CourseID 课程ID
-	CourseID int `json:"course_id"`
+	CourseID int `json:"course_id" form:"course_id"`
 }
 
 // BookingCourseReq 约课请求
