@@ -50,3 +50,21 @@ func CancelCollectContent(context *gin.Context) {
 		"data": proto.ContentOperationResp{},
 	})
 }
+
+// UpContent 点赞内容
+func UpContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentOperationResp{},
+	})
+}
+
+// CancelUpContent 取消点赞内容
+func CancelUpContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentOperationResp{},
+	})
+}

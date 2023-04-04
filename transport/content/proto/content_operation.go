@@ -28,3 +28,15 @@ type ContentCancelCollectReq struct {
 	// ContentOperation 嵌套ContentOperation 内容操作
 	ContentOperation
 }
+
+// ContentUpReq 点赞内容
+type ContentUpReq struct {
+	// ContentOperation 嵌套ContentOperation 内容操作
+	ContentOperation
+}
+
+// ContentCancelUpReq 取消点赞内容
+type ContentCancelUpReq struct {
+	// ContentOperation 嵌套ContentOperation 内容操作
+	ContentOperation
+}

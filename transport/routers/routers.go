@@ -41,6 +41,10 @@ func Routers() *gin.Engine {
 		contentRouter.POST("/collect", content.CollectContent)
 		// 取消收藏内容 /content/cancel/collect
 		contentRouter.POST("/cancel/collect", content.CancelCollectContent)
+		// 点赞内容 /content/up
+		contentRouter.POST("/up", content.UpContent)
+		// 取消点赞内容 /content/cancel/up
+		contentRouter.POST("/cancel/up", content.CancelUpContent)
 	}
 
 	return r
