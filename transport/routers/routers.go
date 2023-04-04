@@ -37,6 +37,8 @@ func Routers() *gin.Engine {
 		contentRouter.GET("/mod/contents", content.ModContents)
 		// 浏览内容 /content/view
 		contentRouter.POST("/view", content.ViewContent)
+		// 收藏内容 /content/collect
+		contentRouter.POST("/collect", content.CollectContent)
 	}
 
 	return r

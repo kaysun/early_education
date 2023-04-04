@@ -16,3 +16,9 @@ type ContentViewReq struct {
 	// ContentOperation 嵌套ContentOperation 内容操作
 	ContentOperation
 }
+
+// ContentCollectReq 收藏内容请求
+type ContentCollectReq struct {
+	// ContentOperation 嵌套ContentOperation 内容操作
+	ContentOperation
+}

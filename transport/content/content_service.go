@@ -32,3 +32,12 @@ func ViewContent(context *gin.Context) {
 		"data": proto.ContentOperationResp{},
 	})
 }
+
+// CollectContent 收藏内容
+func CollectContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentOperationResp{},
+	})
+}
