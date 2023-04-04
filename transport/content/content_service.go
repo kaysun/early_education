@@ -41,3 +41,12 @@ func CollectContent(context *gin.Context) {
 		"data": proto.ContentOperationResp{},
 	})
 }
+
+// CancelCollectContent 取消收藏内容
+func CancelCollectContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentOperationResp{},
+	})
+}

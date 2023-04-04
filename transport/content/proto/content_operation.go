@@ -22,3 +22,9 @@ type ContentCollectReq struct {
 	// ContentOperation 嵌套ContentOperation 内容操作
 	ContentOperation
 }
+
+// ContentCancelCollectReq 取消收藏内容请求
+type ContentCancelCollectReq struct {
+	// ContentOperation 嵌套ContentOperation 内容操作
+	ContentOperation
+}
