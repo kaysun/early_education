@@ -1,6 +1,7 @@
 package routers
 
 import (
+	"github.com/circle/early_education/transport/comment"
 	"github.com/circle/early_education/transport/content"
 	"github.com/circle/early_education/transport/course"
 	"github.com/circle/early_education/transport/user"
@@ -45,6 +46,8 @@ func Routers() *gin.Engine {
 		contentRouter.POST("/up", content.UpContent)
 		// 取消点赞内容 /content/cancel/up
 		contentRouter.POST("/cancel/up", content.CancelUpContent)
+		// 跟玩内容 /content/follow_and_play
+		contentRouter.POST("/follow_and_play", comment.FollowAndPlayContent)
 	}
 
 	return r

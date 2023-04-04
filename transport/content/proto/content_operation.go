@@ -3,9 +3,9 @@ package proto
 // ContentOperation 内容操作
 type ContentOperation struct {
 	// ContentID 内容ID
-	ContentID int `form:"content_id" json:"content_id"`
+	ContentID int `json:"content_id" form:"content_id"`
 	// UserID 用户ID
-	UserID int `form:"user_id" json:"user_id"`
+	UserID int `json:"user_id" form:"user_id"`
 }
 
 type ContentOperationResp struct {
