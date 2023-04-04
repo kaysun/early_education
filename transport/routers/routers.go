@@ -35,6 +35,8 @@ func Routers() *gin.Engine {
 		contentRouter.GET("/homepage", content.Homepage)
 		// 分页获取模块下的所有内容 /content/mod/contents
 		contentRouter.GET("/mod/contents", content.ModContents)
+		// 浏览内容 /content/view
+		contentRouter.POST("/view", content.ViewContent)
 	}
 
 	return r

@@ -23,3 +23,12 @@ func ModContents(context *gin.Context) {
 		"data": proto.ModContentsResp{},
 	})
 }
+
+// ViewContent 浏览内容
+func ViewContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentOperationResp{},
+	})
+}
