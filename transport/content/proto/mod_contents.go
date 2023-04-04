@@ -14,6 +14,8 @@ type ModContentsReq struct {
 type ModContentsResp struct {
 	// Total 模块内容总数
 	Total int `json:"total"`
+	// 模块信息
+	Mod Mod `json:"mod"`
 	// Contents 模块内容列表
 	Contents []Content `json:"contents"`
 }
