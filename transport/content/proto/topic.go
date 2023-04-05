@@ -34,3 +34,21 @@ type Topic struct {
 	// CreateTime 创建时间
 	CreateTime string `json:"create_time"`
 }
+
+// TopicCreateReq 创建专题请求
+type TopicCreateReq struct {
+	// TopicName 专题名字
+	TopicName string `json:"topic_name"`
+	// TopicDesc 专题描述
+	TopicDesc string `json:"topic_desc"`
+	// TopicCover 专题封面图
+	TopicCover string `json:"topic_cover"`
+	// UserID 创建人用户ID
+	UserID int `json:"user_id"`
+}
+
+// TopicCreateResp 创建专题回包
+type TopicCreateResp struct {
+	// TopicID 专题ID
+	TopicID int `json:"topic_id"`
+}

@@ -33,6 +33,15 @@ func Topics(context *gin.Context) {
 	})
 }
 
+// CreateTopic 创建专题
+func CreateTopic(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.TopicCreateResp{},
+	})
+}
+
 // ViewContent 浏览内容
 func ViewContent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
