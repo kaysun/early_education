@@ -48,6 +48,8 @@ func Routers() *gin.Engine {
 		contentRouter.POST("/cancel/up", content.CancelUpContent)
 		// 跟玩内容 /content/follow_and_play
 		contentRouter.POST("/follow_and_play", comment.FollowAndPlayContent)
+		// 官方提供+推荐+自己创建的+用户参与的育儿专题列表
+		contentRouter.GET("/topics", content.Topics)
 	}
 
 	return r

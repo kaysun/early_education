@@ -11,6 +11,6 @@ func FollowAndPlayContent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "success",
-		"data": proto.ContentFollowAndPlayResp{},
+		"data": proto.CommentResp{},
 	})
 }

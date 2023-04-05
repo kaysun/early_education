@@ -24,6 +24,15 @@ func ModContents(context *gin.Context) {
 	})
 }
 
+// Topics 官方提供+推荐+自己创建的育儿专题列表
+func Topics(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.TopicsResp{},
+	})
+}
+
 // ViewContent 浏览内容
 func ViewContent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
