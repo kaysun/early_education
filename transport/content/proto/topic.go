@@ -31,6 +31,8 @@ type Topic struct {
 	TopicType uint8 `json:"topic_type"`
 	// CreatorUserID 创建人 官方：0； 个人创建：user_id
 	CreatorUserID int `json:"creator_uid"`
+	// CommentNum 评论数
+	CommentNum int `json:"comment_num"`
 	// CreateTime 创建时间
 	CreateTime string `json:"create_time"`
 }
