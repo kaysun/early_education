@@ -10,6 +10,8 @@ import (
 
 func Routers() *gin.Engine {
 	r := gin.Default()
+
+	// 用户
 	userRouter := r.Group("/user")
 	{
 		// 注册 /user/register
@@ -18,6 +20,7 @@ func Routers() *gin.Engine {
 		userRouter.POST("/login", user.Login)
 	}
 
+	// 课程
 	courseRouter := r.Group("/course")
 	{
 		// 课程列表，默认返回7天的 /course/all
@@ -30,6 +33,7 @@ func Routers() *gin.Engine {
 		courseRouter.POST("/cancel/booking", course.CancelBooking)
 	}
 
+	// 内容
 	contentRouter := r.Group("/content")
 	{
 		// 首页列表 /content/homepage
@@ -52,6 +56,13 @@ func Routers() *gin.Engine {
 		contentRouter.GET("/topics", content.Topics)
 		// 创建专题
 		contentRouter.POST("/topic/create", content.CreateTopic)
+	}
+
+	// 评论
+	commentRouter := r.Group("/comment")
+	{
+		// 分页获取内容下的评论列表
+		commentRouter.GET("/list", comment.List)
 	}
 
 	return r

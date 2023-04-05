@@ -14,3 +14,12 @@ func FollowAndPlayContent(context *gin.Context) {
 		"data": proto.CommentResp{},
 	})
 }
+
+// List 分页获取内容下的评论列表
+func List(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.CommentListResp{},
+	})
+}

@@ -12,6 +12,8 @@ type User struct {
 	Password string `gorm:"column:password"`
 	// Nick 昵称
 	Nick string `gorm:"column:nick"`
+	// Head 头像
+	Head string `gorm:"column:head"`
 	// Birthday 出生日期，用于判定
 	Birthday time.Time `gorm:"column:birthday"`
 	// Phone 手机号
