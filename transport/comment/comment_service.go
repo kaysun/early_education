@@ -29,6 +29,15 @@ func Create(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "success",
-		"data": proto.CommentCreateReq{},
+		"data": proto.CommentResp{},
+	})
+}
+
+// Reply 回复评论
+func Reply(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.CommentResp{},
 	})
 }

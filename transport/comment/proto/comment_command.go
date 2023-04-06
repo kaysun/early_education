@@ -22,5 +22,16 @@ type CommentCreateReq struct {
 
 // CommentResp 评论回包
 type CommentResp struct {
+	// CommentID 评论ID
 	CommentID int `json:"comment_id"`
+}
+
+// CommentReply 回复评论
+type CommentReply struct {
+	// RootID 根评论ID。若回复的是一级评论，则RootID=一级评论的CommentID；若回复的是二级评论，则RootID=二级评论的ParentID，即一级评论的CommentID。
+	RootID int `json:"root_id" form:"root_id"`
+	// ParentID 父评论ID。ParentID=要回复的CommentID，无论是一级评论，还是二级评论。注意：三级评论不开放回复入口。
+	ParentID int `json:"parent_id" form:"parent_id"`
+	// CommentCreateReq 嵌套创建评论请求
+	CommentCreateReq
 }
