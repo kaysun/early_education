@@ -41,3 +41,21 @@ func Reply(context *gin.Context) {
 		"data": proto.CommentResp{},
 	})
 }
+
+// Up 点赞评论
+func Up(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": struct{}{},
+	})
+}
+
+// CancelUp 取消点赞评论
+func CancelUp(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": struct{}{},
+	})
+}

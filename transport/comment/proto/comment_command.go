@@ -35,3 +35,12 @@ type CommentReply struct {
 	// CommentCreateReq 嵌套创建评论请求
 	CommentCreateReq
 }
+
+// CommentUpOrCancelUpReq 评论点赞/取消点赞请求
+type CommentUpOrCancelUpReq struct {
+	CommentID int `json:"comment_id" form:"comment_id"`
+}
+
+// CommentUpOrCancelUpResp 评论点赞/取消点赞回包
+type CommentUpOrCancelUpResp struct {
+}
