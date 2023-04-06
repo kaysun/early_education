@@ -71,6 +71,8 @@ func Routers() *gin.Engine {
 		commentRouter.POST("/up", comment.Up)
 		// 取消点赞评论 /comment/cancel/up
 		commentRouter.POST("/cancel/up", comment.CancelUp)
+		// 删除评论 /comment/delete
+		commentRouter.POST("/delete", comment.Delete)
 	}
 
 	return r

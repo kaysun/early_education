@@ -44,3 +44,12 @@ type CommentUpOrCancelUpReq struct {
 // CommentUpOrCancelUpResp 评论点赞/取消点赞回包
 type CommentUpOrCancelUpResp struct {
 }
+
+// CommentDeleteReq 删除评论请求
+type CommentDeleteReq struct {
+	CommentID int `json:"comment_id" form:"comment_id"`
+}
+
+// CommentDeleteResp 删除评论请求回包
+type CommentDeleteResp struct {
+}

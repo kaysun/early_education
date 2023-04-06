@@ -47,7 +47,7 @@ func Up(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "success",
-		"data": struct{}{},
+		"data": proto.CommentUpOrCancelUpResp{},
 	})
 }
 
@@ -56,6 +56,15 @@ func CancelUp(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
 		"msg":  "success",
-		"data": struct{}{},
+		"data": proto.CommentUpOrCancelUpResp{},
+	})
+}
+
+// Delete 删除评论
+func Delete(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.CommentDeleteResp{},
 	})
 }
