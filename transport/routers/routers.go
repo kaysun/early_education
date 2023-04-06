@@ -61,8 +61,10 @@ func Routers() *gin.Engine {
 	// 评论
 	commentRouter := r.Group("/comment")
 	{
-		// 分页获取内容下的评论列表
+		// 分页获取内容下的评论列表 /comment/list
 		commentRouter.GET("/list", comment.List)
+		// 发表评论 /comment/create
+		commentRouter.POST("/create", comment.Create)
 	}
 
 	return r

@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// FollowAndPlayContent 跟玩内容
+// FollowAndPlayContent 跟玩内容。注意，直接调用跟创建评论一样的service即可。
 func FollowAndPlayContent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"code": 0,
@@ -21,5 +21,14 @@ func List(context *gin.Context) {
 		"code": 0,
 		"msg":  "success",
 		"data": proto.CommentListResp{},
+	})
+}
+
+// Create 发表评论
+func Create(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.CommentCreateReq{},
 	})
 }
