@@ -56,3 +56,12 @@ func Upload(context *gin.Context) {
 		"data": proto.UploadCourseResp{},
 	})
 }
+
+// Bind 绑定用户课程
+func Bind(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.BindCourseResp{},
+	})
+}

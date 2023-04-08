@@ -82,6 +82,8 @@ func Routers() *gin.Engine {
 		adminRouter.POST("/course/upload", course.Upload)
 		// 教师列表 /admin/teacher/list
 		adminRouter.POST("/teacher/list", course.TeacherList)
+		// 用户课程绑定 /admin/course/bind
+		adminRouter.POST("/course/bind", course.Bind)
 	}
 
 	return r
