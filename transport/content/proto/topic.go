@@ -54,3 +54,12 @@ type TopicCreateResp struct {
 	// TopicID 专题ID
 	TopicID int `json:"topic_id"`
 }
+
+// TopicRecommendReq 专题推荐请求
+type TopicRecommendReq struct {
+	TopicID int `json:"topic_id" form:"topic_id"`
+}
+
+// TopicRecommendResp 专题推荐回包
+type TopicRecommendResp struct {
+}

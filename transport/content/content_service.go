@@ -42,6 +42,15 @@ func CreateTopic(context *gin.Context) {
 	})
 }
 
+// RecommendTopic 推荐专题
+func RecommendTopic(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.TopicRecommendResp{},
+	})
+}
+
 // ViewContent 浏览内容
 func ViewContent(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{

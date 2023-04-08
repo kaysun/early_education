@@ -86,6 +86,8 @@ func Routers() *gin.Engine {
 		adminRouter.POST("/teacher/list", course.TeacherList)
 		// 用户课程绑定 /admin/course/bind
 		adminRouter.POST("/course/bind", course.Bind)
+		// 专题推荐 /admin/topic/recommend
+		adminRouter.POST("/topic/recommend", content.RecommendTopic)
 	}
 
 	return r
