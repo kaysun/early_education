@@ -78,6 +78,8 @@ func Routers() *gin.Engine {
 	// 管理
 	adminRouter := r.Group("/admin")
 	{
+		// admin用户登录 /admin/user/login
+		adminRouter.POST("/user/login", user.AdminUserLogin)
 		// 上传课程 /admin/course/upload
 		adminRouter.POST("/course/upload", course.Upload)
 		// 教师列表 /admin/teacher/list

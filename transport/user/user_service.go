@@ -83,3 +83,12 @@ func Login(context *gin.Context) {
 		"msg":  "login failed",
 	})
 }
+
+// AdminUserLogin 管理页面登录
+func AdminUserLogin(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.AdminUserLoginResp{},
+	})
+}
