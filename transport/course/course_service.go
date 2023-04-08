@@ -47,3 +47,12 @@ func CancelBooking(context *gin.Context) {
 		"data": proto.CancelBookingCourseResp{BookingID: 0},
 	})
 }
+
+// Upload 上传课程
+func Upload(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.UploadCourseResp{},
+	})
+}

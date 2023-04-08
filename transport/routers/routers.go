@@ -75,5 +75,12 @@ func Routers() *gin.Engine {
 		commentRouter.POST("/delete", comment.Delete)
 	}
 
+	// 管理
+	adminRouter := r.Group("/admin")
+	{
+		// 上传课程 /admin/course/upload
+		adminRouter.POST("/course/upload", course.Upload)
+	}
+
 	return r
 }
