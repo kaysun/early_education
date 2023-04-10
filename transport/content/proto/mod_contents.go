@@ -17,5 +17,24 @@ type ModContentsResp struct {
 	// 模块信息
 	Mod Mod `json:"mod"`
 	// Contents 模块内容列表
-	Contents []Content `json:"contents"`
+	Contents []ContentItem `json:"contents"`
+}
+
+// ContentItem 内容项
+type ContentItem struct {
+	// ContentBase 嵌套内容
+	ContentBase
+
+	// ContentID 内容ID
+	ContentID int `json:"content_id"`
+	// CommentNum 评论数
+	CommentNum int `json:"comment_num"`
+	// CollectNum 收藏数
+	CollectNum int `json:"collect_num"`
+	// ViewsNum 浏览数
+	ViewsNum int `json:"views_num"`
+	// FollowAndPlayNum follow_and_play_num
+	FollowAndPlayNum int `json:"follow_and_play_num"`
+	// UpNum 点赞数
+	UpNum int `json:"up_num"`
 }

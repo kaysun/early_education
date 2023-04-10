@@ -88,6 +88,8 @@ func Routers() *gin.Engine {
 		adminRouter.POST("/course/bind", course.Bind)
 		// 专题推荐 /admin/topic/recommend
 		adminRouter.POST("/topic/recommend", content.RecommendTopic)
+		// 内容上传 /admin/content/upload
+		adminRouter.POST("/content/upload", content.UploadContent)
 	}
 
 	return r

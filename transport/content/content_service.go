@@ -95,3 +95,12 @@ func CancelUpContent(context *gin.Context) {
 		"data": proto.ContentOperationResp{},
 	})
 }
+
+// UploadContent 上传内容
+func UploadContent(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"code": 0,
+		"msg":  "success",
+		"data": proto.ContentUploadResp{},
+	})
+}
